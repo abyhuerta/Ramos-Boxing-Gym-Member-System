@@ -1,0 +1,463 @@
+<!--Author: FGU066, Jose Perdomo This is the View class in our MVC layout for our admin classes-->
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".AdminActivity">
+
+    <ImageView
+        android:id="@+id/imageView4"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:alpha="0.7"
+        android:contentDescription="LOGO"
+        android:scaleType="centerInside"
+        android:src="@drawable/ramos"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0" />
+
+
+    <androidx.appcompat.widget.SearchView
+        android:id="@+id/SearchView"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="25dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="25dp"
+        android:background="@drawable/sv_bg"
+        android:elevation="35dp"
+        app:iconifiedByDefault="false"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:queryHint="Search Boxers..." />
+
+    <ImageView
+        android:id="@+id/imageViewRec"
+        android:layout_width="350dp"
+        android:layout_height="550dp"
+        android:layout_marginStart="25dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginEnd="25dp"
+        android:layout_marginBottom="15dp"
+        android:backgroundTint="@color/cardview_light_background"
+        android:elevation="25dp"
+        android:src="@drawable/rectangle"
+        app:layout_constraintBottom_toTopOf="@id/HomeButton"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.491"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/SearchView" />
+
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="300dp"
+        android:elevation="35dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="60dp"
+        android:orientation="horizontal"
+        app:layout_constraintCircleRadius="8dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/SearchView">
+
+
+        <ImageView
+            android:id="@+id/userIcon2"
+            android:elevation="35dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@color/md_theme_light_background"
+            android:contentDescription="User Photo"
+            android:orientation="vertical"
+            android:src="@drawable/user_icon" />
+
+        <TextView
+            android:id="@+id/boxerNameDynamic"
+            android:elevation="35dp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:paddingLeft="10dp"
+            android:paddingTop="10dp"
+            android:text="Cameron Chainsaw"
+            android:textColor="@color/md_theme_light_tertiary"
+            android:textSize="25dp"
+            android:textStyle="bold" />
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/boxerRecord"
+        android:elevation="35dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="25dp"
+        android:layout_marginEnd="12dp"
+        android:orientation="vertical"
+        android:text="Record : "
+        android:textColor="@color/md_theme_light_tertiary"
+        android:textSize="25dp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@id/proRecord"
+        app:layout_constraintEnd_toEndOf="@+id/imageViewRec"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/imageViewRec"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout" />
+
+    <EditText
+        android:id="@+id/dynamicRecord"
+        android:elevation="35dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:backgroundTint="@android:color/transparent"
+        android:text="10-0"
+        android:textStyle="normal"
+        app:layout_constraintBottom_toTopOf="@id/proRecordDynamic"
+        app:layout_constraintEnd_toEndOf="@id/imageViewRec"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@id/boxerRecord"
+        app:layout_constraintTop_toBottomOf="@id/linearLayout"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <TextView
+        android:id="@+id/proRecord"
+        android:elevation="35dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="35dp"
+        android:layout_marginTop="18dp"
+        android:layout_marginEnd="12dp"
+        android:layout_marginBottom="2dp"
+        android:orientation="vertical"
+        android:text="Pro : "
+        android:textColor="@color/md_theme_light_tertiary"
+        android:textSize="25dp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@id/amRecord"
+        app:layout_constraintEnd_toEndOf="@+id/imageViewRec"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/imageViewRec"
+        app:layout_constraintTop_toBottomOf="@+id/boxerRecord" />
+
+    <EditText
+        android:id="@+id/proRecordDynamic"
+        android:elevation="35dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:layout_marginEnd="12dp"
+        android:orientation="vertical"
+        android:text="---"
+        android:textStyle="normal"
+        android:backgroundTint="@android:color/transparent"
+        app:layout_constraintBottom_toTopOf="@id/amRecordDynamic"
+        app:layout_constraintEnd_toEndOf="@+id/imageViewRec"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/proRecord"
+        app:layout_constraintTop_toBottomOf="@+id/dynamicRecord" />
+
+    <TextView
+        android:id="@+id/amRecord"
+        android:elevation="35dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="11dp"
+        android:orientation="vertical"
+        android:text="Am : "
+        android:textColor="@color/md_theme_light_tertiary"
+        android:textSize="25dp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@id/Boxerweight"
+        app:layout_constraintEnd_toEndOf="@+id/imageViewRec"
+        app:layout_constraintHorizontal_bias="0.18"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/proRecord" />
+
+    <EditText
+        android:id="@+id/amRecordDynamic"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="5dp"
+        android:backgroundTint="@android:color/transparent"
+        android:elevation="35dp"
+        android:orientation="vertical"
+        android:text="10-0"
+        android:textStyle="normal"
+        app:layout_constraintBottom_toTopOf="@id/BoxerWeightDynamic"
+        app:layout_constraintEnd_toEndOf="@+id/imageViewRec"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/amRecord"
+        app:layout_constraintTop_toBottomOf="@+id/proRecordDynamic" />
+
+    <TextView
+        android:id="@+id/Boxerweight"
+        android:elevation="35dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="14dp"
+        android:orientation="vertical"
+        android:text="Weight : "
+        android:textColor="@color/md_theme_light_tertiary"
+        android:textSize="25dp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@+id/imageViewRec"
+        app:layout_constraintHorizontal_bias="0.18"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/amRecord"
+        app:layout_constraintBottom_toTopOf="@id/attendance"/>
+
+    <EditText
+        android:id="@+id/BoxerWeightDynamic"
+        android:elevation="35dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:text="178.6 lb"
+        android:textStyle="normal"
+        android:backgroundTint="@android:color/transparent"
+        app:layout_constraintBottom_toTopOf="@id/attendanceDynamic"
+        app:layout_constraintEnd_toEndOf="@+id/imageViewRec"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/Boxerweight"
+        app:layout_constraintTop_toBottomOf="@+id/amRecordDynamic" />
+
+
+    <TextView
+        android:id="@+id/attendance"
+        android:elevation="35dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="14dp"
+        android:orientation="vertical"
+        android:text="Attendance : "
+        android:textColor="@color/md_theme_light_tertiary"
+        android:textSize="25dp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@+id/imageViewRec"
+        app:layout_constraintHorizontal_bias="0.18"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/Boxerweight"
+        app:layout_constraintBottom_toTopOf="@id/DateOfBirth"/>
+
+
+    <EditText
+        android:id="@+id/attendanceDynamic"
+        android:elevation="35dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:backgroundTint="@android:color/transparent"
+        android:orientation="vertical"
+        android:text="12 days"
+        android:textStyle="normal"
+        app:layout_constraintBottom_toTopOf="@id/DOBDynamic"
+        app:layout_constraintEnd_toEndOf="@+id/imageViewRec"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/attendance"
+        app:layout_constraintTop_toBottomOf="@+id/BoxerWeightDynamic" />
+
+    <TextView
+        android:id="@+id/DateOfBirth"
+        android:elevation="35dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="14dp"
+        android:orientation="vertical"
+        android:text="Date of birth : "
+        android:textColor="@color/md_theme_light_tertiary"
+        android:textSize="25dp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@+id/imageViewRec"
+        app:layout_constraintHorizontal_bias="0.18"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/attendance"
+        app:layout_constraintBottom_toTopOf="@id/Emergencycontact"/>
+
+
+    <EditText
+        android:id="@+id/DOBDynamic"
+        android:elevation="35dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:backgroundTint="@android:color/transparent"
+        android:orientation="vertical"
+        android:paddingLeft="8dp"
+        android:text="07/09/2003"
+        android:textStyle="normal"
+        app:layout_constraintBottom_toTopOf="@id/EmergencyContactDynamic"
+        app:layout_constraintEnd_toEndOf="@+id/imageViewRec"
+        app:layout_constraintHorizontal_bias="0.144"
+        app:layout_constraintStart_toEndOf="@+id/attendance"
+        app:layout_constraintTop_toBottomOf="@+id/attendanceDynamic" />
+
+    <TextView
+        android:id="@+id/Emergencycontact"
+        android:elevation="35dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="9dp"
+        android:orientation="vertical"
+        android:text="Emergency # : "
+        android:textColor="@color/md_theme_light_tertiary"
+        android:textSize="25dp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@id/BoxerNumber"
+        app:layout_constraintEnd_toEndOf="@+id/imageViewRec"
+        app:layout_constraintHorizontal_bias="0.18"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/DateOfBirth" />
+
+
+    <EditText
+        android:id="@+id/EmergencyContactDynamic"
+        android:elevation="35dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="6dp"
+        android:orientation="vertical"
+        android:text="(123)-456-7890"
+        android:textStyle="normal"
+        android:backgroundTint="@android:color/transparent"
+        app:layout_constraintBottom_toTopOf="@id/BoxerContactDynamic"
+        app:layout_constraintEnd_toEndOf="@+id/imageViewRec"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/Emergencycontact"
+        app:layout_constraintTop_toBottomOf="@+id/DOBDynamic" />
+
+
+    <TextView
+        android:id="@+id/BoxerNumber"
+        android:elevation="35dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="9dp"
+        android:orientation="vertical"
+        android:text="Boxers # : "
+        android:textColor="@color/md_theme_light_tertiary"
+        android:textSize="25dp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@id/BoxerUserName"
+        app:layout_constraintEnd_toEndOf="@+id/imageViewRec"
+        app:layout_constraintHorizontal_bias="0.18"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/Emergencycontact" />
+
+
+    <EditText
+        android:id="@+id/BoxerContactDynamic"
+        android:elevation="35dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="6dp"
+        android:orientation="vertical"
+        android:text="(012)-345-6789"
+        android:textStyle="normal"
+        android:backgroundTint="@android:color/transparent"
+        app:layout_constraintBottom_toTopOf="@id/BoxerUserNameDynamic"
+        app:layout_constraintEnd_toEndOf="@+id/imageViewRec"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/BoxerNumber"
+        app:layout_constraintTop_toBottomOf="@+id/EmergencyContactDynamic" />
+
+
+    <TextView
+        android:id="@+id/BoxerUserName"
+        android:elevation="35dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="9dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginBottom="18dp"
+        android:orientation="vertical"
+        android:paddingLeft="8dp"
+        android:paddingRight="8dp"
+        android:text="User Name : "
+        android:textColor="@color/md_theme_light_tertiary"
+        android:textSize="25dp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/imageViewRec"
+        app:layout_constraintEnd_toEndOf="@+id/imageViewRec"
+        app:layout_constraintHorizontal_bias="0.167"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/BoxerNumber" />
+
+    <EditText
+        android:id="@+id/BoxerUserNameDynamic"
+        android:elevation="35dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="121dp"
+        android:layout_marginBottom="12dp"
+        android:backgroundTint="@android:color/transparent"
+        android:orientation="vertical"
+        android:paddingLeft="8dp"
+        android:text="Killer_ChainSaw"
+        android:textStyle="normal"
+        app:layout_constraintBottom_toBottomOf="@+id/imageViewRec"
+        app:layout_constraintEnd_toEndOf="@+id/imageViewRec"
+        app:layout_constraintHorizontal_bias="0.22"
+        app:layout_constraintStart_toEndOf="@+id/BoxerUserName"
+        app:layout_constraintTop_toBottomOf="@+id/BoxerContactDynamic"
+        app:layout_goneMarginLeft="8dp" />
+
+
+    <Button
+        android:id="@+id/HomeButton"
+        app:cornerRadius="16dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:elevation="35dp"
+        android:text="Back To Login"
+        app:layout_constraintEnd_toStartOf="@id/deleteButton"
+        app:layout_constraintStart_toEndOf="@id/updateButton"
+        app:layout_constraintTop_toBottomOf="@id/imageViewRec" />
+
+    <Button
+        android:id="@+id/deleteButton"
+        app:cornerRadius="16dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:elevation="35dp"
+        android:text="Delete User"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toEndOf="@+id/HomeButton"
+        app:layout_constraintTop_toBottomOf="@id/imageViewRec" />
+
+    <Button
+        android:id="@+id/updateButton"
+        app:cornerRadius="16dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:elevation="35dp"
+        android:text="Update User"
+        app:layout_constraintEnd_toStartOf="@id/HomeButton"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/imageViewRec" />
+
+
+
+
+
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

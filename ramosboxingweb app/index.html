@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="styles.css">
+    <title>Ramos Boxing</title>
+</head>
+<body>
+    <button id="signInButton">Sign In</button>
+    <button id="newUserButton">New User</button>
+
+    <form id="signInForm" method="POST" style="display: none;">
+        <label for="signInusername">Username</label>
+        <input type="text" id="signInusername" name="signInusername" placeholder="Enter your username" required><br><br>
+        
+        <label for="signInpassword">Password</label>
+        <input type="password" id="signInpassword" name="signInpassword" placeholder="Enter your password" required><br><br>
+        
+        <input type="submit" value="Submit">
+    </form>
+
+    <form id="newUserForm" method="POST" style="display: none;">
+        <label for="newUsername">New Username</label>
+        <input type="text" id="newUsername" name="newUsername" placeholder="Enter a new username" required><br><br>
+        
+        <label for="newPassword">New Password</label>
+        <input type="password" id="newPassword" name="newPassword" placeholder="Enter a new password" required><br><br>
+        
+        <label for="name">Name</label>
+        <input type="text" id="name" name="name" placeholder="Enter your name" required><br><br>
+        
+        <label for="age">Age</label>
+        <input type="number" id="age" name="age" placeholder="Enter your age" required><br><br>
+        
+        <label for="dateOfBirth">Date of Birth</label>
+        <input type="date" id="dateOfBirth" name="dateOfBirth" required><br><br>
+
+        <input type="submit" value="Submit">
+    </form>
+
+    <script>
+        document.getElementById("signInButton").addEventListener("click", function() {
+            document.getElementById("signInForm").style.display = "block";
+            document.getElementById("newUserForm").style.display = "none";
+        });
+
+        document.getElementById("newUserButton").addEventListener("click", function() {
+            document.getElementById("signInForm").style.display = "none";
+            document.getElementById("newUserForm").style.display = "block";
+        });
+
+        document.getElementById("signInForm").addEventListener("submit", function(event) {
+            event.preventDefault(); // Prevent form submission
+
+            const formData = new FormData(event.target);
+            fetch('/signin', {
+                method: 'POST',
+                body: formData
+            })
+            .then(response => response.text())
+            .then(data => {
+                // Display the result of the sign-in attempt (You can update the DOM as needed)
+                console.log(data);
+            })
+            .catch(error => {
+                console.error(error);
+            });
+        });
+
+        document.getElementById("newUserForm").addEventListener("submit", function(event) {
+            event.preventDefault(); // Prevent form submission
+
+            const formData = new FormData(event.target);
+            fetch('/new_user', {
+                method: 'POST',
+                body: formData
+            })
+            .then(response => response.text())
+            .then(data => {
+                // Display the result of the new user creation attempt (You can update the DOM as needed)
+                console.log(data);
+            })
+            .catch(error => {
+                console.error(error);
+            });
+        });
+    </script>
+</body>
+</html>
+

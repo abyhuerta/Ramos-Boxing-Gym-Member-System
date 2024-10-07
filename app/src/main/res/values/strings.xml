@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">Rowdy_Rumble </string>
+    <string name="boxer_username">User Name: </string>
+    <string name = "boxer_weight">Weight: </string>
+    <string name = "boxer_attendance">Attendance: </string>
+    <string name = "boxer_DOB">Date of Birth: </string>
+    <string name = "boxer_emergency">Emergency Contact: </string>
+    <string name = "boxer_number">Boxer Contact: </string>
+    <string name = "boxer_pro">Pro: </string>
+    <string name = "boxer_am">Am: </string>
+    <string name = "boxer_name">Name: </string>
+    <string name = "boxer_age">Age: </string>
+
+</resources>
