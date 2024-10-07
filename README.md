@@ -14,7 +14,7 @@ Built in collaboration by [Aby Huerta](https://github.com/abyhuerta), [Jose Perd
 
 ### Clone the Repository
 1) Install Android Studio
-2) Open your Android Studio then fo to the File > New > Project from Version Control
+2) Open your Android Studio then go to the File > New > Project from Version Control
 3) Choose Git from the Version Control drop-down menu
 4) Under URL, paste the following project link:
 
